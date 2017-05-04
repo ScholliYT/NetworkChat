@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=UIInterface()
+comment1.params=clients
+comment1.target=void\ updateList(java.util.List)
+comment2.params=message
+comment2.target=void\ addMessage(java.lang.String)
+comment3.params=title
+comment3.target=void\ setTitle(java.lang.String)
+numComments=4

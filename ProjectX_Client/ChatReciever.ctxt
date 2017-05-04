@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=ChatReciever
+comment1.params=k\ ui
+comment1.target=ChatReciever(Kommunikation,\ ClientUi)
+comment2.params=
+comment2.target=void\ run()
+numComments=3

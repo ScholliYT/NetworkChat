@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=server
+comment0.target=ClientAnnahme(Server)
+comment0.text=\r\n\ Konstruktor\ der\ Klasse\r\n
+comment1.params=
+comment1.target=void\ run()
+comment1.text=\r\n\ Wird\ ausgef\u00FChrt,\ sobald\ dieser\ Thread\ gestartet\ wird\ und\ nimmt\ neue\ Clients\ an\r\n
+comment2.params=
+comment2.target=void\ interrupt()
+comment2.text=\r\n\ Bricht\ die\ Annahme\ von\ neuen\ Clients\ ab\r\n
+numComments=3

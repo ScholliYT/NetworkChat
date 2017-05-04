@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Manager
+comment1.params=ip\ port
+comment1.target=Manager(java.lang.String,\ int)
+comment2.params=
+comment2.target=void\ einloggen()
+comment3.params=
+comment3.target=void\ chatStarten()
+comment4.params=
+comment4.target=void\ run()
+numComments=5

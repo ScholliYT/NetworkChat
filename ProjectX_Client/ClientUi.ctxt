@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=ClientUi
+comment1.params=k
+comment1.target=ClientUi(Kommunikation)
+comment2.params=message
+comment2.target=void\ addMessage(java.lang.String)
+numComments=3

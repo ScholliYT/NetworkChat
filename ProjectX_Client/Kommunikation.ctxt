@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Kommunikation
+comment1.params=ip\ port
+comment1.target=Kommunikation(java.lang.String,\ int)
+comment2.params=ip\ port
+comment2.target=java.net.Socket\ verbindungAufbauen(java.lang.String,\ int)
+comment3.params=
+comment3.target=boolean\ istwasimbuffer()
+comment4.params=
+comment4.target=java.lang.String\ streamLesen()
+comment5.params=s
+comment5.target=void\ streamSchreiben(java.lang.String)
+numComments=6

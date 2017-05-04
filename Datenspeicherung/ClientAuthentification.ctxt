@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=client\ manager\ server
+comment0.target=ClientAuthentification(Client,\ LoginManager,\ Server)
+comment0.text=\r\n\ Konstruktor\ der\ Klasse\r\n\ Ben\u00F6tigt\ einen\ Client,\ einen\ Loginmanager\ und\ einen\ Server\r\n
+comment1.params=
+comment1.target=void\ run()
+numComments=2

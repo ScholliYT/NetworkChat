@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=AccountManager
+comment1.params=ko\ sc
+comment1.target=AccountManager(Kommunikation,\ java.util.Scanner)
+comment1.text=\r\n\ Instanziert\ ein\ neues\ Accountmanager\ objekt\r\n
+comment2.params=
+comment2.target=boolean\ einloggen()
+numComments=3

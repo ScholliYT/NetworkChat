@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Server()
+comment0.text=\r\n\ Konstruktor\ dieser\ Klasse\r\n\ Startet\ den\ Server\r\n\ @throws\ Exception\ wenn\ ein\ Fehler\ auftritt\r\n
+comment1.params=
+comment1.target=java.util.List\ getClients()
+comment1.text=\r\n\ Gibt\ eine\ Liste\ mit\ allen\ Clients\ zur\u00FCck\r\n\ @return\r\n
+comment2.params=message\ sender
+comment2.target=void\ sendMessages(java.lang.String,\ Client)
+comment2.text=\r\n\ Sendet\ eine\ Nachricht\ an\ alle\ Clients,\ bis\ auf\ den\ Sender\r\n\ @param\ message\r\n\ @param\ sender\r\n
+comment3.params=message
+comment3.target=void\ sendNotification(java.lang.String)
+comment4.params=client
+comment4.target=void\ addClient(Client)
+comment4.text=\r\n\ F\u00FCgt\ dem\ Server\ einen\ neuen\ Client\ hinzu\r\n
+comment5.params=
+comment5.target=void\ terminate()
+comment5.text=\r\n\ Beendet\ das\ Programm\ komplett\r\n
+numComments=6

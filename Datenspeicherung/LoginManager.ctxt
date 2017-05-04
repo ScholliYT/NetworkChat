@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=LoginManager()
+comment1.params=
+comment1.target=void\ trySave()
+comment2.params=
+comment2.target=void\ save()
+comment3.params=
+comment3.target=void\ load()
+comment4.params=username\ password
+comment4.target=void\ addUser(java.lang.String,\ java.lang.String)
+comment5.params=
+comment5.target=void\ createLoginDb()
+comment6.params=user\ pw
+comment6.target=boolean\ validLogin(java.lang.String,\ java.lang.String)
+numComments=7
