@@ -8,9 +8,12 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 import java.awt.Color;
+import java.awt.Component;
+
 import javax.swing.JPasswordField;
 import javax.swing.UIManager;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 /**
@@ -28,10 +31,11 @@ public class LoginUi extends JDialog {
 	private JLabel lblStatusNichtVerbunden;
 	private JLabel lblUsernameOderPasswort;
 	
-	
+	private ArrayList<Component> loginComponents;
 	
 	public LoginUi(Manager m) {
 		super((JDialog) null);
+		loginComponents = new ArrayList<Component>();
 		setModalityType(ModalityType.APPLICATION_MODAL);
 		setResizable(false);
 		setLocationRelativeTo(null);
@@ -70,6 +74,10 @@ public class LoginUi extends JDialog {
 				if(success){
 					lblStatusNichtVerbunden.setForeground(Color.GREEN);
 					lblStatusNichtVerbunden.setText("Status: Verbunden");
+					
+					for(Component comp: loginComponents){
+						comp.setEnabled(true);
+					}
 				}
 			}
 		});
@@ -97,6 +105,8 @@ public class LoginUi extends JDialog {
 		panel_1.add(lblPasswort);
 		
 		txtUsername = new JTextField();
+		loginComponents.add(txtUsername);
+		txtUsername.setEnabled(false);
 		txtUsername.setText("username");
 		txtUsername.setHorizontalAlignment(SwingConstants.RIGHT);
 		txtUsername.setBounds(74, 21, 341, 20);
@@ -104,11 +114,15 @@ public class LoginUi extends JDialog {
 		txtUsername.setColumns(10);
 		
 		passwordField = new JPasswordField();
+		loginComponents.add(passwordField);
+		passwordField.setEnabled(false);
 		passwordField.setHorizontalAlignment(SwingConstants.RIGHT);
 		passwordField.setBounds(74, 46, 341, 20);
 		panel_1.add(passwordField);
 		
 		JButton btnEinloggen = new JButton("Einloggen");
+		loginComponents.add(btnEinloggen);
+		btnEinloggen.setEnabled(false);
 		btnEinloggen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
 				if(m.einloggen(txtUsername.getText(), String.copyValueOf(passwordField.getPassword()))){

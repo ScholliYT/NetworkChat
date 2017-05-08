@@ -1,5 +1,7 @@
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.net.SocketTimeoutException;
 
 /**
  * Übernimmt den Ablauf des Programmes
@@ -11,10 +13,12 @@ public class Manager {
 	private Kommunikation k;
 	//Userinterface für den Chat
 	private ClientUi ui;
+	private String username;
 
 	public Manager(){ //Zu beginn ist erstmal alles null
 		this.k = null;
 		this.ui = null;
+		this.username = "";
 	}
 	
 	/**
@@ -26,12 +30,17 @@ public class Manager {
 	@SuppressWarnings("resource")
 	public boolean verbinden(String ip, int port){
 		try{
-			Socket s = new Socket(InetAddress.getByName(ip), port); //Ein Socket wird erstellt und dieser wird verbunden
+			Socket s = new Socket(); //Ein Socket wird erstellt
+			s.connect(new InetSocketAddress(InetAddress.getByName(ip), port), 2000); //Der Socket wird verbunden, Timeout in 2 Sekunden
 			if(s != null){  //Ist der Socket null?
 				this.k = new Kommunikation(s); //Der Socket ist nicht null, und die möglichkeit zur weiteren Kommunikation wird erstellt
 				return true; //Die Verbindung wurde erfolgreich erstellt, also wird true zurückgegeben
 			}
-		}catch(Exception e){}
+		}catch(SocketTimeoutException ex){
+			//ignore
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 		return false; //Die Verbindung ist warum auch immer fehlgeschlagen, es wird false zurückgegeben
 	}
 	
@@ -43,11 +52,15 @@ public class Manager {
 	 */
 	public boolean einloggen(String username, String password){
 		AccountManager am = new AccountManager(k); //Ein Accountmanager zum einloggen wird erstellt
-		return am.einloggen(username, password); //Das Ergebis des Einlogversuches wird zurückgegeben
+		if(am.einloggen(username, password)){ //Einloggen erfolgreich?
+			this.username = username; //Ja, der username wird gesetzt
+			return true; //true zurückgeben
+		}
+		return false; //Der Loginbversuch war nicht erfolgreich
 	}
 
 	public void chatStarten(){
-		ui = new ClientUi(k); //Das Userinterface wird erstellt
+		ui = new ClientUi(k, username); //Das Userinterface wird erstellt
 		ui.setVisible(true); //Das Userinterface wird angezeigt
 		
 		ChatReciever reciever = new ChatReciever(k, ui); //Ein Reciever zum Empfangen von Nachrichten wird erstellt

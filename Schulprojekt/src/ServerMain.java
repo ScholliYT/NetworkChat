@@ -16,21 +16,21 @@ public class ServerMain{
 	public static void main(String[] args) { //Wird von Java bei dem Start des Programmes ausgeführt
 		try {
 			Server s = null;
-			if(args.length == 1){
+			if(args.length == 1){ //Wurde ein Port mit übergeben?
 				try{
-					int port = Integer.parseInt(args[0]);
-					if(port >= 0 && port <= 65535){
-						s = new Server(port);
+					int port = Integer.parseInt(args[0]); //Die Eingabe wird, falls möglich, in eine Zahl umgewandelt (String to int)
+					if(port >= 0 && port <= 65535){ //ist die Zahl ok?
+						s = new Server(port); //Zahl ok, der Server wird auf dem übergebenen Port gestartet
 					}
 				}catch (Exception e){}
 			}
 			
-			if(s == null){
+			if(s == null){ //Wurde schon ein Server mit Port instanziert?
 				try {
-					s = new Server();
+					s = new Server(); //Nein, ein normaler Server mit Port 6000 wird erstellt
 				} catch (Exception e){
 					e.printStackTrace();
-					return;
+					return; //Etwas lief schief, s ist null und das Programm wird abstürzen, deshalb wird es beendet
 				}
 			}
 			
@@ -40,8 +40,8 @@ public class ServerMain{
 			EventQueue.invokeLater(new Runnable() {
 				@Override
 				public void run(){
-					ServerUI ui = new ServerUI(server);
-					ui.setVisible(true);
+					ServerUI ui = new ServerUI(server); //UI erstellen
+					ui.setVisible(true); //UI anzeigen
 				}
 			});
 		} catch (Exception e) {
